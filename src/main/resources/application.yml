@@ -1,0 +1,30 @@
+jwt:
+  secret: '[a-zA-Z0-9._]^+$Guidelines89797987forAlphabeticalArraNumeralsandOtherSymbo$'
+
+server:
+  port: 7070
+#Disabling Spring to fire up the the whitelabel error page, but telling the servlet to handle the error handling.
+#  error:
+#    whitelabel:
+#      enabled: false
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/usermanagementDB
+    password: mjama
+    username: root
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+# Tell Spring to not to handle exception by it self. disabling default Whitelabel error page
+#  mvc:
+#    throw-exception-if-no-handler-found: true
+#  resources:
+#    add-mappings: false
+
