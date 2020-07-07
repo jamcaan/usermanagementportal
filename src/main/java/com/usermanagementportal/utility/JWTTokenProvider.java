@@ -4,7 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.usermanagementportal.models.UserPrinciple;
+import com.usermanagementportal.models.UserPrincipal;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,10 +29,10 @@ public class JWTTokenProvider {
     @Value("${jwt.secret}")
     private String secret;
 
-    public String generateJwtToken(UserPrinciple userPrinciple){
-        String [] claims = getClaimsFromUser(userPrinciple);
+    public String generateJwtToken(UserPrincipal userPrincipal){
+        String [] claims = getClaimsFromUser(userPrincipal);
         return JWT.create().withIssuer(SAGAL_SOFT_INC).withAudience(SAGAL_SOFT_ADMINSTRATION)
-                .withIssuedAt(new Date()).withSubject(userPrinciple.getPassword())
+                .withIssuedAt(new Date()).withSubject(userPrincipal.getPassword())
                 .withArrayClaim(AUTHORITIES, claims).withExpiresAt(new Date(System.currentTimeMillis()
                 + EXPIRATION_TIME)).sign(Algorithm.HMAC512(secret.getBytes()));
     }
@@ -82,7 +82,7 @@ public class JWTTokenProvider {
         return verifier;
     }
 
-    private String[] getClaimsFromUser(UserPrinciple user) {
+    private String[] getClaimsFromUser(UserPrincipal user) {
         List<String> authorities = new ArrayList<>();
         for (GrantedAuthority grantedAuthority : user.getAuthorities()){
             authorities.add(grantedAuthority.getAuthority());

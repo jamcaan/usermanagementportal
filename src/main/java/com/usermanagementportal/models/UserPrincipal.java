@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 import static java.util.Arrays.stream;
 
-public class UserPrinciple implements UserDetails {
+public class UserPrincipal implements UserDetails {
 
     private User user;
 //    private Role role;
@@ -22,7 +22,7 @@ public class UserPrinciple implements UserDetails {
 //        this.role = role;
 //    }
 
-    public UserPrinciple(User user) {
+    public UserPrincipal(User user) {
         this.user = user;
     }
 
