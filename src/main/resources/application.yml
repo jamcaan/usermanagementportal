@@ -1,7 +1,8 @@
 jwt:
-  secret: '[a-zA-Z0-9._]^+$Guidelines89797987forAlphabeticalArraNumeralsandOtherSymbo$'
+   secret: '[a-zA-Z0-9._]^+$Guidelines89797987forAlphabeticalArraNumeralsandOtherSymbo$'
 
 server:
+  # I using the default port for another project
   port: 7070
 #Disabling Spring to fire up the the whitelabel error page, but telling the servlet to handle the error handling.
 #  error:

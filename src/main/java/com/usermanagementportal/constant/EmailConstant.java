@@ -2,7 +2,7 @@ package com.usermanagementportal.constant;
 
 public class EmailConstant {
     public static final String SIMPLE_MAIL_TRANSFER_PROTOCOL = "smtps";
-    public static final String USERNAME = "***xxx**@gmail.com";
+    public static final String USERNAME = "jawxxxx***@gmail.com";
     public static final String PASSWORD = "xxx***";
     public static final String FROM_EMAIL = "support@sagalsoft.com";
     public static final String CC_EMAIL = "";
